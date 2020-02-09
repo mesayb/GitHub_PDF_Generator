@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/mesayb/GitHub_PDF_Generator/issues"
   },
-  "homepage": "https://github.com/mesayb/GitHub_PDF_Generator#readme"
+  "homepage": "https://github.com/mesayb/GitHub_PDF_Generator#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "html-pdf": "^2.2.0",
+    "inquirer": "^7.0.4"
+  }
 }
