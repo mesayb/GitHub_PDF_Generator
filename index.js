@@ -24,9 +24,6 @@ function QuestionConstructor(question, inputType, name, choices) {
 const colorQuestion = new QuestionConstructor(questions[0], 'list', 'color', colorsList);
 const userNameQuestion = new QuestionConstructor(questions[1], 'input', 'name');
 
-//test output from constructor
-console.log(colorQuestion);
-console.log(userNameQuestion);
 
 inquireUser();
 //prompt user 
@@ -72,25 +69,23 @@ async function gitAPICaller(requests) {
          totalStar += repoInfo.data[i].stargazers_count;
       }
       userData.totalStar = totalStar;
-
-  
       return userData;
+
    })).then(async userData => {
-      console.log("userdata 1 = " + JSON.stringify(userData));
        let newhtmlData =   genHTML.generateHTML(userData)
-      //  console.log(newhtmlData)
+
       await  fs.writeFile('index.html',newhtmlData,'utf-8',function(error){
           if(error){
              console.log('failed to write to file')
           }
        });
-      await  htmlPDF.create(newhtmlData, {format:'Letter'}).toFile('gitProfile.pdf', function(err, res) {
+
+      await  htmlPDF.create(newhtmlData, {format:'A3'}).toFile('gitProfileInfo.pdf', function(err, res) {
          if (err) return console.log(err);
-         console.log(res); 
+        console.log('PDF Generated')
        })
   
    }).catch(function (error) {
       console.log(error)
    })
-
 };

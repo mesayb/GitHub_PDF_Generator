@@ -116,6 +116,7 @@ const colors = {
            text-align: center;
            }
            .photo-header h1 {
+            padding-top: 20px;
            margin-top: 10px;
            }
            .links-nav {
@@ -165,6 +166,7 @@ const colors = {
            text-decoration: none;
            color: inherit;
            font-weight: bold;
+           margin-right: 15px;
            }
   
            @media print { 
